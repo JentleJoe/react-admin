@@ -1,8 +1,13 @@
-# React + Vite
+# ADMIN DASHBOARD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains source code of an fully functional react admin dashboard
 
-Currently, two official plugins are available:
+## Technologies / Frameworks Used
+- React.js
+- TailwindCss
+- JavaScript
+- HTML/CSS
+- Vite.js
+- React Router Dom
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is being built by [Joshua Oseghale](https://joshuaoseghale.vercel.app)
