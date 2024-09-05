@@ -1,4 +1,4 @@
-# ADMIN DASHBOARD
+# REACT ADMIN DASHBOARD
 
 This repository contains source code of an fully functional react admin dashboard
 
