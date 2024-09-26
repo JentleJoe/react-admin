@@ -1,27 +1,23 @@
 import { useState } from "react"
-import { LightModeOutlined, DarkModeOutlined, NotificationsOutlined, SettingsOutlined,
-  PersonOutline, SearchSharp
- } from "@mui/icons-material"
+import { LightModeOutlined, DarkModeOutlined, NotificationsOutlined, SettingsOutlined, PersonOutline, SearchSharp } from "@mui/icons-material"
+import { useTheme } from "../../../theme/ThemeContext"
 
 const Topbar = () => {
-  const [theme, setTheme] = useState("dark")
-  const toggleTheme = () => {
-    setTheme(prev => (
-      prev === 'dark' ? 'light' : 'dark'
-    ))
-  }
+  const { theme, isDarkMode, toggleTheme } = useTheme()
+  // console.log('isDarkMode: ' ,isDarkMode)
+  // const [theme, setTheme] = useState("dark")
 
   return (
-    <div className={`flex justify-between items-center w-full h-min ${theme === 'dark' && 'bg-slate-800'} p-4 `}>
+    <div className={`flex justify-between items-center w-full h-min ${theme.background} p-4 `}>
       <div className={`topleft `}>
-        <div className={`search-bx flex items-center justify-center p-2 ${ theme === 'dark' ? 'bg-slate-700' : 'bg-[rgba(0,0,0,0.1)]' } flex justify-between item-center w-[200px] rounded-sm`}>
-          <p className={` text-sm  ${ theme === 'dark' ? 'text-gray-300' : 'text-gray-800' } `}>Search</p>
-          <SearchSharp className={` ${ theme === 'dark' ? 'text-gray-300' : 'text-gray-800' }  `} />
+        <div className={`search-bx flex items-center justify-center p-2 ${ theme.searchboxBg } flex justify-between item-center w-[200px] rounded-sm`}>
+          <p className={` text-sm  ${ theme.text } `}>Search</p>
+          <SearchSharp className={` ${ theme.text }  `} />
         </div>
       </div>
       <div className={`topright`}>
         {
-          theme === 'dark' ?
+          isDarkMode ?
           <div className={`grid grid-flow-col sm:gap-3 gap-2`}>
             <div className={`hover:bg-slate-600 rounded-full flex items-center justify-center p-1 cursor-pointer`}>
               <DarkModeOutlined onClick={toggleTheme} className={`text-white`} />

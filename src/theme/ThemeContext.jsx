@@ -21,7 +21,7 @@ export const ThemeProvider = ({ children }) => {
     }
 
     return(
-        <ThemeContext.Provider value={{ theme, darkTheme, toggleTheme }}>
+        <ThemeContext.Provider value={{ theme, isDarkMode, toggleTheme }}>
             {children}
         </ThemeContext.Provider>
     )
