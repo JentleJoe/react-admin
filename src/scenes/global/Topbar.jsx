@@ -1,11 +1,8 @@
-import { useState } from "react"
 import { LightModeOutlined, DarkModeOutlined, NotificationsOutlined, SettingsOutlined, PersonOutline, SearchSharp } from "@mui/icons-material"
-import { useTheme } from "../../../theme/ThemeContext"
+import { useTheme } from "../../theme/ThemeContext"
 
 const Topbar = () => {
   const { theme, isDarkMode, toggleTheme } = useTheme()
-  // console.log('isDarkMode: ' ,isDarkMode)
-  // const [theme, setTheme] = useState("dark")
 
   return (
     <div className={`flex justify-between items-center w-full h-min ${theme.background} p-4 `}>

@@ -1,15 +1,15 @@
-// import Sidebar from "./assets/scenes/global/Sidebar"
-import { ThemeProvider } from "./theme/ThemeContext"
-import Topbar from "./assets/scenes/global/Topbar"
+import Topbar from "./scenes/global/Topbar"
+import { useTheme } from "./theme/ThemeContext"
 
 function App() {
+  const { theme, isDarkMode, toggleTheme } = useTheme()
 
   return (
-    <ThemeProvider>
-      <div className="app">
-        <Topbar />
-      </div>
-    </ThemeProvider>
+  <>
+    <div className={`app ${theme.background}`}>
+      <Topbar />
+    </div>
+  </>
   )
 }
 
