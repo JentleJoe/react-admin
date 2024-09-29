@@ -1,5 +1,8 @@
-import Topbar from "./scenes/global/Topbar"
+import { Topbar, Sidebar } from "./scenes/global"
 import { useTheme } from "./theme/ThemeContext"
+import { Route, Routes } from "react-router-dom"
+import { Dashboard } from "./scenes/dashboard"
+
 
 function App() {
   const { theme, isDarkMode, toggleTheme } = useTheme()
@@ -7,7 +10,15 @@ function App() {
   return (
   <>
     <div className={`app ${theme.background}`}>
-      <Topbar />
+      <aside>
+        <Sidebar />
+      </aside>
+      <main className={`content`} >
+        <Topbar />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+        </Routes>
+      </main>
     </div>
   </>
   )
