@@ -1,6 +1,6 @@
 import { useTheme } from "../../theme/ThemeContext"
-import { DataGrid, GridToolbar } from '@mui/x-data-grid'
-import { mockDataContacts } from "../../data/mockData"
+import { DataGrid } from '@mui/x-data-grid'
+import { mockDataInvoices } from "../../data/mockData"
 import { Header } from "../../components"
 
 const Invoices = () => {
@@ -8,19 +8,11 @@ const Invoices = () => {
 
   const columns = [
     {field: "id", headerName: "ID", flex: 0.5 },
-    { field: 'registrarId', headerName: 'Registrar ID' },
     {
       field: "name",
       headerName: "Name",
       flex: 1,
       cellClassName: "name-column--cell",
-    },
-    {
-      field: 'age',
-      headerName: 'Age',
-      type: 'number',
-      headerAlign: 'left',
-      align: 'left',
     },
     {
       field: 'phone',
@@ -33,28 +25,33 @@ const Invoices = () => {
       flex: 1,
     },
     {
-        field: 'address',
-        headerName: 'Address',
+        field: 'cost',
+        headerName: 'Cost',
         flex: 1,
+        renderCell: (params) => {
+            <p className={`${theme.text}`} >
+                {`$${params.row.cost}`}
+            </p>
+        }
     },
     {
-        field: 'city',
-        headerName: 'City',
+        field: 'date',
+        headerName: 'Date',
         flex: 1,
     },
   ]
 
   return (
     <div className={``} >
-      <Header title="CONTACTS" subtitle='List of Contacts for Future Reference' />
+      <Header title="INVOICES" subtitle='List of Invoice Balances' />
       <div className={`mt-10 text-blue-800 `}>
         <DataGrid
-        rows={mockDataContacts}
+        checkboxSelection
+        rows={mockDataInvoices}
         columns={columns}
-        slots={{ toolbar: GridToolbar }}
         />
       </div>
-    </div>
+    </div> 
   )
 }
 

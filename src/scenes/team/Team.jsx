@@ -56,6 +56,7 @@ const Team = () => {
       <Header title="TEAM" subtitle='Managing the Team Members' />
       <div className={`mt-10 text-blue-800 `}>
         <DataGrid
+        checkboxSelection
         rows={mockDataTeam}
         columns={columns}
         />

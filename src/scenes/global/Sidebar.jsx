@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useTheme } from '../../theme/ThemeContext';
 import { Menu, MenuItem, Sidebar as ProSidebar } from 'react-pro-sidebar';
-import { Dashboard } from '../dashboard';
 import userlogo from '../../assets/user.png'
 import { Link } from 'react-router-dom';
 import { HomeOutlined, PeopleOutline, ContactsOutlined, ReceiptOutlined, PersonOutline,
