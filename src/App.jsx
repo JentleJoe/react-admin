@@ -2,6 +2,7 @@ import { Topbar, Sidebar } from "./scenes/global"
 import { useTheme } from "./theme/ThemeContext"
 import { Route, Routes } from "react-router-dom"
 import { Dashboard } from "./scenes/dashboard"
+import { Team } from "./scenes"
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Topbar />
         <Routes>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/team" element={<Team />} />
         </Routes>
       </main>
     </div>

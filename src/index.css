@@ -37,3 +37,8 @@ body,
 ::-webkit-scrollbar-thumb:hover{
   background: #555;
 }
+
+/* Sidebar Defaults Override */
+.css-dip3t8{
+  background: none !important;
+}
