@@ -10,11 +10,11 @@ function App() {
 
   return (
   <>
-    <div className={`app ${theme.background}`}>
-      <aside>
+    <div className={`app`}>
+      <aside className={` ${theme.sidebar}`} >
         <Sidebar />
       </aside>
-      <main className={`content`} >
+      <main className={`content ${theme.background} p-5`} >
         <Topbar />
         <Routes>
           <Route path="/" element={<Dashboard />} />

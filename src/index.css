@@ -12,6 +12,9 @@ body,
   height: 100%;
   width: 100%;
 }
+.sidebar{
+  height: 100%;
+}
 
 .app{
   display: flex;
@@ -42,3 +45,6 @@ body,
 .css-dip3t8{
   background: none !important;
 }
+/* .dark.css-dip3t8{
+  background: #1e2935 !important;
+} */
