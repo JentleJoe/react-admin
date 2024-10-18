@@ -8,7 +8,7 @@ const Topbar = () => {
     <div className={`flex justify-between items-center w-full h-min `}>
       <div className={`topleft `}>
         <div className={`search-bx flex items-center justify-center p-2 ${ theme.searchboxBg } flex justify-between item-center w-[200px] rounded-sm`}>
-          <p className={` text-sm  ${ theme.text } `}>Search</p>
+            <input type="text" className={` text-sm  ${ theme.text } border-none bg-transparent outline-none `} placeholder="Search" />
           <SearchSharp className={` ${ theme.text }  `} />
         </div>
       </div>
