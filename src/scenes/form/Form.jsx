@@ -189,7 +189,7 @@ const Form = () => {
                 </Box>
                 <div className="w-full flex justify-end mt-6">
                    <button type="submit" className="text-black bg-green flex py-2 px-3 rounded-[4px] bg-[#4cc2ac] 
-                   text-xs font-medium ">
+                   text-xs font-medium hover:bg-[#3B9F8A] ">
                     CREATE NEW USER
                    </button>
                 </div>
