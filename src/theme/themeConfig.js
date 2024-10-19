@@ -23,6 +23,20 @@ export const lightTheme = {
             },
         },
     },
+    form: {
+        colors: {
+            inputText: '',
+            inputBackground: '#f2f0f0',
+            inputHoverBg: '#e6f3ff',
+            inputFocusBg: '#ffffff',
+            labelColor: '#2c3e50',
+        },
+        typography: {
+            inputFontSize: '16px',
+            labelFontSize: '12px',
+            helperTextSize: '10px',
+        },
+    },
 }
 
 export const darkTheme = {
@@ -48,6 +62,20 @@ export const darkTheme = {
                 backgroundColor: `#13395e`,
                 color: '#b6c8d9',
             },
+        },
+    },
+    form: {
+        colors: {
+            inputText: 'white',
+            inputBackground: '#FFFFFF0F',
+            inputHoverBg: '#FFFFFF33',
+            inputFocusBg: '#FFFFFF0F',
+            labelColor: '#A9A9A9',
+        },
+        typography: {
+            inputFontSize: '16px',
+            labelFontSize: '12px',
+            helperTextSize: '10px',
         },
     },
 }

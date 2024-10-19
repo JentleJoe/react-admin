@@ -9,7 +9,7 @@ import { useTheme } from "../../theme/ThemeContext";
 
 
 const Form = () => {
-    const { theme, isDarkMode } = useTheme()
+    const { theme } = useTheme()
 
     const isNonMobile = useMediaQuery("(min-width:600px)")
 
@@ -40,18 +40,8 @@ const Form = () => {
         console.log(values)
     }
 
-    const colors = {
-        inputBackground: '#f2f0f0',
-        inputHoverBg: '#e6f3ff',
-        inputFocusBg: '#ffffff',
-        labelColor: '#2c3e50'
-    }
-
-    const typography = {
-        inputFontSize: '16px',
-        labelFontSize: '12px',
-        helperTextSize: '12px'
-    }
+    const colors = theme.form.colors
+    const typography = theme.form.typography
 
     const textFieldStyles = {
         '& .MuiFilledInput-root': {
@@ -61,10 +51,14 @@ const Form = () => {
             },
             '&.Mui-focused': {
                 backgroundColor: colors.inputFocusBg
-            }
+            },
+            '&:after': {
+                borderBottomColor: colors.borderColor
+            },
         },
         '& .MuiFilledInput-input': {
             fontSize: typography.inputFontSize,
+            color: colors.inputText,
         },
         '& .MuiInputLabel-root': {
             fontSize: typography.labelFontSize,
@@ -193,11 +187,12 @@ const Form = () => {
                     }}
                   />
                 </Box>
-                <Box display="flex" justifyContent="end" mt="20px">
-                  <Button type="submit" color="secondary" variant="contained">
-                    Create New User
-                  </Button>
-                </Box>
+                <div className="w-full flex justify-end mt-6">
+                   <button type="submit" className="text-black bg-green flex py-2 px-3 rounded-[4px] bg-[#4cc2ac] 
+                   text-xs font-medium ">
+                    CREATE NEW USER
+                   </button>
+                </div>
               </form>
             )}
         </Formik>
