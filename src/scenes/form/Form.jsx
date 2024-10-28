@@ -4,11 +4,10 @@ import { Header } from "../../components"
 import { useMediaQuery } from "@mui/material";
 import {TextField} from "@mui/material";
 import {Box} from "@mui/material";
-import {Button} from "@mui/material";
 import { useTheme } from "../../theme/ThemeContext";
 
 
-const Form = () => {
+const Form = ({setAlert}) => {
     const { theme } = useTheme()
 
     const isNonMobile = useMediaQuery("(min-width:600px)")
@@ -36,9 +35,11 @@ const Form = () => {
         address2: Yup.string().required("required"),
     })
 
-    const handleFormSubmit = (values) => {
-        console.log(values)
-    }
+    const handleFormSubmit = (values, { resetForm }) => {
+      console.log(values)
+      setAlert(`User ${values.firstName} added successfully`, 'green')
+      resetForm()
+  }
 
     const colors = theme.form.colors
     const typography = theme.form.typography
