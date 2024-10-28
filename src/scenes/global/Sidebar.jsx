@@ -9,7 +9,7 @@ import { HomeOutlined, PeopleOutline, ContactsOutlined, ReceiptOutlined, PersonO
  } from '@mui/icons-material';
 
  const Item = ({title, to, icon, selected, setSelected}) => {
-  const { theme, isDarkMode } = useTheme()
+  const { theme } = useTheme()
   return(
     <MenuItem active={selected === title} style={theme.sidebarItem} onClick={() => setSelected(title)} component={<Link to={to} />} icon={icon} >
       {title}
@@ -22,7 +22,7 @@ const Sidebar = () => {
   const [isCollaspsed, setIsCollapsed] = useState(false)
   const [selected, setSelected] = useState('Dashboard')
 
-  const { theme, isDarkMode } = useTheme()
+  const { theme } = useTheme()
 
   const toggleCollapsed = () => {
     setIsCollapsed(prev => !prev)
@@ -68,7 +68,7 @@ const Sidebar = () => {
             <Item title='Bar Chart' to='/bar' icon={<BarChartOutlined />} selected={selected} setSelected={setSelected} />
             <Item title='Pie Chart' to='/pie' icon={<PieChartOutlineOutlined />} selected={selected} setSelected={setSelected} />
             <Item title='Line Chart' to='/line' icon={<TimelineOutlined />} selected={selected} setSelected={setSelected} />
-            <Item title='Geography' to='/geography' icon={<MapOutlined />} selected={selected} setSelected={setSelected} />
+            <Item title='Geography Chart' to='/geography' icon={<MapOutlined />} selected={selected} setSelected={setSelected} />
           </Menu>
         </div>
       </ProSidebar>

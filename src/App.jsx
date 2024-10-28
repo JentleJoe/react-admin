@@ -2,7 +2,7 @@ import { Topbar, Sidebar } from "./scenes/global"
 import { useTheme } from "./theme/ThemeContext"
 import { Route, Routes } from "react-router-dom"
 import { Dashboard } from "./scenes/dashboard"
-import { Team, Contacts, Invoices, Form } from "./scenes"
+import { Team, Contacts, Invoices, Form, Calendar } from "./scenes"
 
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/invoices" element={<Invoices />} />
           <Route path="/form" element={<Form />} />
+          <Route path="/calendar" element={<Calendar />} />
         </Routes>
       </main>
     </div>

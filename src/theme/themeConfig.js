@@ -15,6 +15,7 @@ export const lightTheme = {
     sidebarItem: {
         background: '',
         color: 'black',
+        fontSize: '16px',
         border: 'none',
         button: {
             [`&.active`]: {
@@ -22,6 +23,14 @@ export const lightTheme = {
                 color: '#b6c8d9',
             },
         },
+        hover: {
+            backgroundColor: 'blue',
+            color: 'white',
+        }
+    },
+    calendarSidebar: {
+        backgroundColor: '#f2f0f0',
+        border: 'none',
     },
     form: {
         colors: {
@@ -56,13 +65,22 @@ export const darkTheme = {
     sidebarItem: {
         background: '',
         // color: '#e5e7eb',
+        fontSize: '16px',
         border: 'none',
         button: {
             [`&.active`]: {
                 backgroundColor: `#13395e`,
-                color: '#b6c8d9',
+                color: 'white',
             },
         },
+        hover: {
+            backgroundColor: 'blue',
+            color: 'white',
+        },
+    },
+    calendarSidebar: {
+        backgroundColor: '#1e293b',
+        color: '#e5e7eb',
     },
     form: {
         colors: {
