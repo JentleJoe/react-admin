@@ -6,7 +6,7 @@ const Header = ({ title, subtitle }) => {
   return (
     <div className={`mb-8 mt-10`}>
         <h2 className={`font-bold ${theme.text} text-3xl sm:mb-[5px] `}>{title}</h2>
-        <h2 className={`text-[#4CC2AC] `}>{subtitle}</h2>
+        <h2 className={`text-[#4CC2AC] font-medium `}>{subtitle}</h2>
     </div>
   )
 }

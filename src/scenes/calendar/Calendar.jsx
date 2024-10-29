@@ -43,12 +43,13 @@ const Calendar = () => {
     <div>
         <Header title='CALENDAR' subtitle='Full Calendar Interactive Page' />
         <div className="flex justify-between">
-            <div className="md:mr-5 mr-3 sm:p-4 p-2 rounded-[4px] flex flex-col items-center max-w-[15vw]" style={theme.calendarSidebar}>
+            <div className="min-w-[80px] md:mr-5 mr-3 max-[500px]:p-1 lg:p-4 p-2 rounded-[4px]
+            flex flex-col items-center max-w-[15vw]" style={theme.calendarSidebar}>
                 {/* CALENDAR SIDEBAR */}
                 <h3 className="font-medium max-sm:text-sm mb-4">Events</h3>
                 {
                     currentEvents.map((event) => (
-                        <div key={event.id} className="max-sm:text-xs sm:text-sm md:text-base flex flex-wrap items-center mb-2  rounded-sm bg-[#4cceac] p-2">
+                        <div key={event.id} className="max-[500px]:text-[8px] max-sm:text-xs sm:text-sm md:text-base flex flex-wrap items-center mb-2  rounded-sm bg-[#4cceac] p-2">
                             <h4>{event.title}</h4>
                             <p>
                             {

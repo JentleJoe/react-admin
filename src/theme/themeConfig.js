@@ -46,6 +46,27 @@ export const lightTheme = {
             helperTextSize: '10px',
         },
     },
+    accordion: {
+        // backgroundColor: '#f2f0f0',
+        // '&:hover': {
+        //   backgroundColor: '#e6f3ff'
+        // },
+        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+        border: '1px solid #dee2e6'
+      },
+      accordionSummary: {
+        backgroundColor: '',
+        '& .MuiAccordionSummary-expandIconWrapper': {
+          color: '#495057'  // Change icon color
+        },
+        '&:hover': {
+        //   backgroundColor: '#f2f0f0'
+        }
+      },
+      accordionDetails: {
+        backgroundColor: '#ffffff',
+        color: '#212529'
+      },
 }
 
 export const darkTheme = {
@@ -96,4 +117,26 @@ export const darkTheme = {
             helperTextSize: '10px',
         },
     },
+    accordion: {
+        // backgroundColor: '#f2f0f0',
+        // '&:hover': {
+        //   backgroundColor: '#e6f3ff'
+        // },
+        // boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+        // border: '1px solid #202020'
+      },
+      accordionSummary: {
+        backgroundColor: '#202020',
+        // borderBottom: '1px solid #202020',
+        '& .MuiAccordionSummary-expandIconWrapper': {
+          color: 'white'  // Change icon color
+        },
+        '&:hover': {
+        //   backgroundColor: '#f2f0f0'
+        }
+      },
+      accordionDetails: {
+        backgroundColor: '#202020',
+        color: 'white'
+      },
 }

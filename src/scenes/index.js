@@ -4,6 +4,7 @@ import Contacts from './contacts/Contacts'
 import Invoices from './invoices/Invoices'
 import Form from './form/Form'
 import Calendar from './calendar/Calendar'
+import Faq from './faq/Faq'
 
 export {
     Topbar,
@@ -13,4 +14,5 @@ export {
     Invoices,
     Form,
     Calendar,
+    Faq,
 }

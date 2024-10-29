@@ -2,7 +2,7 @@ import { Topbar, Sidebar } from "./scenes/global"
 import { useTheme } from "./theme/ThemeContext"
 import { Route, Routes } from "react-router-dom"
 import { Dashboard } from "./scenes/dashboard"
-import { Team, Contacts, Invoices, Form, Calendar } from "./scenes"
+import { Team, Contacts, Invoices, Form, Calendar, Faq } from "./scenes"
 import { Alert } from "./components"
 import { useState } from "react"
 
@@ -55,6 +55,7 @@ function App() {
           <Route path="/invoices" element={<Invoices />} />
           <Route path="/form" element={<Form setAlert={handleAlert} />} />
           <Route path="/calendar" element={<Calendar />} />
+          <Route path="/faq" element={<Faq />} />
         </Routes>
       </main>
     </div>
