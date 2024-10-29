@@ -37,18 +37,19 @@ const Faq = () => {
   return (
     <div>
         <Header title="FAQ" subtitle='Frequently Asked Questions Page' />
-
         {
             faqs.map((faq, index) => (
-                <Accordion defaultExpanded sx={theme.accordion} key={index}>
-                    <AccordionSummary expandIcon={<ExpandMore />} 
-                    sx={theme.accordionSummary}>
-                        <h5 className={` text-[#3B9F8A]`}>{faq.question}</h5>
-                    </AccordionSummary>
-                    <AccordionDetails sx={theme.accordionDetails}>
-                        <p>{faq.answer}</p>
-                    </AccordionDetails>
-                </Accordion>
+                <div key={index} className="mb-[2px]">
+                    <Accordion defaultExpanded sx={theme.accordion} key={index}>
+                        <AccordionSummary expandIcon={<ExpandMore />} 
+                        sx={theme.accordionSummary}>
+                            <h5 className={` text-[#3B9F8A]`}>{faq.question}</h5>
+                        </AccordionSummary>
+                        <AccordionDetails sx={theme.accordionDetails}>
+                            <p>{faq.answer}</p>
+                        </AccordionDetails>
+                    </Accordion>
+                </div>
             ))
         }
     </div>
