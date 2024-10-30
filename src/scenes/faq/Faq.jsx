@@ -39,7 +39,7 @@ const Faq = () => {
         <Header title="FAQ" subtitle='Frequently Asked Questions Page' />
         {
             faqs.map((faq, index) => (
-                <div key={index} className="mb-[2px]">
+                <div key={index} className="mb-[1px]">
                     <Accordion defaultExpanded sx={theme.accordion} key={index}>
                         <AccordionSummary expandIcon={<ExpandMore />} 
                         sx={theme.accordionSummary}>

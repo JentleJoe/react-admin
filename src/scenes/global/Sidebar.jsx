@@ -65,9 +65,9 @@ const Sidebar = () => {
             <Item title='Calendar' to='/calendar' icon={<CalendarTodayOutlined />} selected={selected} setSelected={setSelected} />
             <Item title='FAQ Page' to='/faq' icon={<HelpOutlineOutlined />} selected={selected} setSelected={setSelected} />
             <h6 className={`${theme.sidebarSubtitle} `}>Charts</h6>
-            <Item title='Bar Chart' to='/bar' icon={<BarChartOutlined />} selected={selected} setSelected={setSelected} />
-            <Item title='Pie Chart' to='/pie' icon={<PieChartOutlineOutlined />} selected={selected} setSelected={setSelected} />
-            <Item title='Line Chart' to='/line' icon={<TimelineOutlined />} selected={selected} setSelected={setSelected} />
+            <Item title='Bar Chart' to='/barchart' icon={<BarChartOutlined />} selected={selected} setSelected={setSelected} />
+            <Item title='Pie Chart' to='/piechart' icon={<PieChartOutlineOutlined />} selected={selected} setSelected={setSelected} />
+            <Item title='Line Chart' to='/linechart' icon={<TimelineOutlined />} selected={selected} setSelected={setSelected} />
             <Item title='Geography Chart' to='/geography' icon={<MapOutlined />} selected={selected} setSelected={setSelected} />
           </Menu>
         </div>
