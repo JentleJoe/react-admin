@@ -1,3 +1,5 @@
+import { tokens } from "../theme"
+
 export const lightTheme = {
     background: 'bg-[#fcfcfc]',
     searchboxBg: 'bg-[rgba(0,0,0,0.1)]',
@@ -68,6 +70,7 @@ export const lightTheme = {
         backgroundColor: '#ffffff',
         color: '#212529'
       },
+      palette: tokens("light"),
 }
 
 export const darkTheme = {
@@ -141,4 +144,5 @@ export const darkTheme = {
         backgroundColor: '#202020',
         color: 'white'
       },
+      palette: tokens("dark"),
 }

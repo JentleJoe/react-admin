@@ -4,7 +4,7 @@ import { lightTheme, darkTheme } from "./themeConfig";
 const ThemeContext = createContext()
 
 export const ThemeProvider = ({ children }) => {
-    const [isDarkMode, setIsDarkMode] = useState(false)
+    const [isDarkMode, setIsDarkMode] = useState(true)
 
     useEffect(() => {
         if (isDarkMode){
