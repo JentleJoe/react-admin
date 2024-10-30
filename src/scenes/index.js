@@ -8,6 +8,7 @@ import Faq from './faq/Faq'
 import Line from './line/LIne'
 import Bar from './bar/Bar'
 import Pie from './pie/Pie'
+import Geography from './geography/Geography'
 
 export {
     Topbar,
@@ -21,4 +22,5 @@ export {
     Line,
     Bar,
     Pie,
+    Geography,
 }

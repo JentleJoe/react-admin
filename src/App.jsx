@@ -2,7 +2,7 @@ import { Topbar, Sidebar } from "./scenes/global"
 import { useTheme } from "./theme/ThemeContext"
 import { Route, Routes } from "react-router-dom"
 import { Dashboard } from "./scenes/dashboard"
-import { Team, Contacts, Invoices, Form, Calendar, Faq, Pie, Line, Bar } from "./scenes"
+import { Team, Contacts, Invoices, Form, Calendar, Faq, Pie, Line, Bar, Geography } from "./scenes"
 import { Alert } from "./components"
 import { useState } from "react"
 
@@ -59,6 +59,7 @@ function App() {
           <Route path="/barchart" element={<Bar />} />
           <Route path="/linechart" element={<Line />} />
           <Route path="/piechart" element={<Pie />} />
+          <Route path="/geography" element={<Geography />} />
         </Routes>
       </main>
     </div>
