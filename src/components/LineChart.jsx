@@ -1,11 +1,10 @@
 import { useTheme } from "../theme/ThemeContext"
 import { ResponsiveLine } from "@nivo/line"
-import { tokens } from "../theme"
 import { mockLineData as data } from "../data/mockData"
 
 const LineChart = ({ isDashboard = false }) => {
     const { theme } = useTheme()
-    const colors = tokens(theme.palette.mode)
+    const colors = theme.palette
 
   return (
     <ResponsiveLine
