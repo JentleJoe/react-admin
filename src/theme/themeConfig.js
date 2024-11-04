@@ -70,7 +70,10 @@ export const lightTheme = {
         backgroundColor: '#ffffff',
         color: '#212529'
       },
-      palette: tokens("light"),
+      palette: tokens("light"), //Color Palette
+      dataGrid: {
+        text: 'black'
+      }
 }
 
 export const darkTheme = {
@@ -144,5 +147,8 @@ export const darkTheme = {
         backgroundColor: '#202020',
         color: 'white'
       },
-      palette: tokens("dark"),
+      palette: tokens("dark"), //Color Palette
+      dataGrid: {
+        text: '#E1D9D1'
+      }
 }

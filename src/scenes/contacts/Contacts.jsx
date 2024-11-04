@@ -6,6 +6,8 @@ import { Header } from "../../components"
 const Contacts = () => {
   const { theme } = useTheme()
 
+  const colors = theme.palette
+
   const columns = [
     {field: "id", headerName: "ID", flex: 0.5 },
     { field: 'registrarId', headerName: 'Registrar ID' },
@@ -52,6 +54,35 @@ const Contacts = () => {
         rows={mockDataContacts}
         columns={columns}
         slots={{ toolbar: GridToolbar }}
+        sx={{
+          "& .MuiDataGrid-root": {
+            border: "none",
+          },
+          "& .MuiDataGrid-cell": {
+            borderBottom: "none",
+            color: theme.dataGrid.text,
+          },
+          "& .name-column--cell": {
+            color: colors.greenAccent[300],
+          },
+          "& .MuiDataGrid-columnHeaders": {
+            backgroundColor: colors.blueAccent[700],
+            borderBottom: "none",
+          },
+          "& .MuiDataGrid-virtualScroller": {
+            backgroundColor: colors.primary[400],
+          },
+          "& .MuiDataGrid-footerContainer": {
+            borderTop: "none",
+            backgroundColor: colors.blueAccent[700],
+          },
+          "& .MuiCheckbox-root": {
+            color: `${colors.greenAccent[200]} !important`,
+          },
+          "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+            color: `${colors.grey[100]} !important`,
+          },
+        }}
         />
       </div>
     </div>

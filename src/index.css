@@ -42,14 +42,6 @@ body,
   background: #555;
 }
 
-/* Sidebar Defaults Override */
-.css-dip3t8{
-  background: none !important;
-}
-/* .dark.css-dip3t8{
-  background: #1e2935 !important;
-} */
-
  /* DIALOG STYLES */
 .dialogbx-container{
   position: absolute;
@@ -88,4 +80,22 @@ body,
 }
 .dialogbx.green{
   background-color: #3B9F8A;
+}
+
+
+
+
+
+/* SIDEBAR OVERRIDES */
+.css-dip3t8{
+  background: none !important;
+}
+/* .dark.css-dip3t8{
+  background: #1e2935 !important;
+} */
+
+.css-1c132o2-MuiDataGrid-root,
+.MuiDataGrid-root {
+  --DataGrid-containerBackground: none !important;
+  border: none !important;
 }

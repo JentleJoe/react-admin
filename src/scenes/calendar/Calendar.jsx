@@ -11,6 +11,8 @@ import { formatDate } from "@fullcalendar/core/index.js";
 const Calendar = () => {
     const { theme } = useTheme()
     const [currentEvents, setCurrentEvents] = useState([])
+
+    const colors = theme.palette
     
     const handleDateClick = (selected) => {
         console.log("Selected:\n", selected)
@@ -98,6 +100,9 @@ const Calendar = () => {
                         date: "2024-09-28",
                     },
                     ]}
+                    // eventBackgroundColor={colors.primary[400]}
+                    // eventBorderColor={colors.primary[500]}
+                    eventTextColor={"white"}
                 />
             </div>
         </div>
