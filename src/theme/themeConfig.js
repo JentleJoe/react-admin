@@ -21,17 +21,33 @@ export const lightTheme = {
           '&:hover': {
             backgroundColor: 'transparent',
             color: '#6870fa',
-            '.ps-menu-icon': {color: '#6870fa',},
+            '.ps-menu-icon': {
+                color: '#6870fa',
+                animation: 'vibrate 0.2s ease-in-out infinite',
+                animationIterationCount: '10',
+            },
           },
-          // Padding and margins
-        //   padding: '8px 16px',
-        //   marginBottom: '4px',
-          // Text styles
           color: active ? '#6870fa' : 'black',
-        //   fontWeight: active ? '600' : '400',
-          // Icon styles
           '.ps-menu-icon': {
             color: active ? '#6870fa' : 'black',
+            transition: 'all 0.3s ease',
+            '@keyframes vibrate': {
+                '0%': {
+                    transform: 'rotate(0deg)',
+                },
+                '25%': {
+                    transform: 'rotate(-5deg)',
+                },
+                '50%': {
+                    transform: 'rotate(0deg)',
+                },
+                '75%': {
+                    transform: 'rotate(5deg)',
+                },
+                '100%': {
+                    transform: 'rotate(0deg)',
+                },
+            },
           },
         }),
         // Submenu styles if needed
@@ -105,18 +121,33 @@ export const darkTheme = {
           '&:hover': {
             backgroundColor: 'transparent',
             color: '#6870fa',
-            '.ps-menu-icon': {color: '#6870fa',},
+            '.ps-menu-icon': {
+                color: '#6870fa',
+                animation: 'vibrate 0.2s ease-in-out infinite',
+                animationIterationCount: '10',
+            },
           },
-          // Padding and margins
-        //   padding: '8px 16px',
-        //   marginBottom: '4px',
-        //   fontSize: '14px',
-          // Text styles
           color: active ? '#6870fa' : 'white',
-        //   fontWeight: active ? '600' : '400',
-          // Icon styles
           '.ps-menu-icon': {
             color: active ? '#6870fa' : 'white',
+            transition: 'all 0.3s ease',
+            '@keyframes vibrate': {
+                '0%': {
+                    transform: 'rotate(0deg)',
+                },
+                '25%': {
+                    transform: 'rotate(-5deg)',
+                },
+                '50%': {
+                    transform: 'rotate(0deg)',
+                },
+                '75%': {
+                    transform: 'rotate(5deg)',
+                },
+                '100%': {
+                    transform: 'rotate(0deg)',
+                },
+            },
           },
         }),
         // Submenu styles if needed
