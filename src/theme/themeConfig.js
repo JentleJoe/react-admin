@@ -16,21 +16,29 @@ export const lightTheme = {
         height: '100vh',
     },
     sidebarItem: {
-        background: '',
-        color: 'black',
-        fontSize: '16px',
-        border: 'none',
-        button: {
-            [`&.active`]: {
-                backgroundColor: `#13395e`,
-                color: '#b6c8d9',
-            },
+        button: ({ level, active }) => ({
+          backgroundColor: active ? 'transparent' : 'transparent',
+          '&:hover': {
+            backgroundColor: 'transparent',
+            color: '#6870fa',
+            '.ps-menu-icon': {color: '#6870fa',},
+          },
+          // Padding and margins
+        //   padding: '8px 16px',
+        //   marginBottom: '4px',
+          // Text styles
+          color: active ? '#6870fa' : 'black',
+        //   fontWeight: active ? '600' : '400',
+          // Icon styles
+          '.ps-menu-icon': {
+            color: active ? '#6870fa' : 'black',
+          },
+        }),
+        // Submenu styles if needed
+        subMenuContent: {
+          backgroundColor: '#1F2937',
         },
-        hover: {
-            backgroundColor: 'blue',
-            color: 'white',
-        }
-    },
+      },
     calendarSidebar: {
         backgroundColor: '#f2f0f0',
         border: 'none',
@@ -92,21 +100,30 @@ export const darkTheme = {
         height: '100vh',
     },
     sidebarItem: {
-        background: '',
-        // color: '#e5e7eb',
-        fontSize: '16px',
-        border: 'none',
-        button: {
-            [`&.active`]: {
-                backgroundColor: `#13395e`,
-                color: 'white',
-            },
+        button: ({ level, active }) => ({
+          backgroundColor: active ? 'transparent' : 'transparent',
+          '&:hover': {
+            backgroundColor: 'transparent',
+            color: '#6870fa',
+            '.ps-menu-icon': {color: '#6870fa',},
+          },
+          // Padding and margins
+        //   padding: '8px 16px',
+        //   marginBottom: '4px',
+        //   fontSize: '14px',
+          // Text styles
+          color: active ? '#6870fa' : 'white',
+        //   fontWeight: active ? '600' : '400',
+          // Icon styles
+          '.ps-menu-icon': {
+            color: active ? '#6870fa' : 'white',
+          },
+        }),
+        // Submenu styles if needed
+        subMenuContent: {
+          backgroundColor: '#1F2937',
         },
-        hover: {
-            backgroundColor: 'blue',
-            color: 'white',
-        },
-    },
+      },
     calendarSidebar: {
         backgroundColor: '#1e293b',
         color: '#e5e7eb',

@@ -102,7 +102,7 @@ const Calendar = () => {
                     ]}
                     // eventBackgroundColor={colors.primary[400]}
                     // eventBorderColor={colors.primary[500]}
-                    eventTextColor={"white"}
+                    // eventTextColor={"colors.primary[100]"}
                 />
             </div>
         </div>
