@@ -99,3 +99,84 @@ body,
   --DataGrid-containerBackground: none !important;
   border: none !important;
 }
+
+
+
+
+
+
+/* TESTING CALENDAR COLORS */
+/* Calendar title */
+.fc .fc-toolbar-title {
+  color: var(--primary-text-color) !important;
+  font-weight: bold !important;
+}
+
+/* Day numbers */
+.fc .fc-daygrid-day-number {
+  color: var(--day-text-color) !important;
+  text-decoration: none !important;
+  padding: 8px !important;
+}
+
+/* Week day headers (Mon, Tue, etc) */
+.fc .fc-col-header-cell-cushion {
+  color: var(--header-text-color) !important;
+  text-decoration: none !important;
+  font-weight: bold !important;
+}
+
+/* Event "more" link */
+.fc .fc-daygrid-more-link {
+  color: var(--more-link-color) !important;
+  text-decoration: none !important;
+}
+
+/* Today's date background */
+.fc .fc-day-today {
+  background-color: var(--today-bg-color) !important;
+}
+
+/* Header buttons (prev, next, today) */
+.fc .fc-button {
+  background-color: var(--button-bg-color) !important;
+  border-color: var(--button-border-color) !important;
+  color: var(--button-text-color) !important;
+  border-radius: 4px !important;
+  padding: 6px 12px !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.fc .fc-button:hover {
+  background-color: var(--button-hover-bg-color) !important;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+  background-color: var(--button-hover-bg-color) !important;
+  border-color: var(--button-hover-bg-color) !important;
+}
+
+/* Time grid axis text (time display) */
+.fc .fc-timegrid-axis-cushion,
+.fc .fc-timegrid-slot-label-cushion {
+  color: var(--time-text-color) !important;
+}
+
+/* List view colors */
+.fc .fc-list-day-cushion {
+  background-color: var(--list-day-bg-color) !important;
+  color: var(--list-day-text-color) !important;
+}
+
+/* Additional styles for better aesthetics */
+.fc {
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.fc-view-harness {
+  background-color: transparent;
+}

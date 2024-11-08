@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -12,7 +12,35 @@ const Calendar = () => {
     const { theme } = useTheme()
     const [currentEvents, setCurrentEvents] = useState([])
 
-    const colors = theme.palette
+    // Static colors for testing
+    const testColors = {
+        primary: "#2196f3",      // Blue
+        secondary: "#f50057",    // Pink
+        text: "#ffffff",         // White
+        textDark: "#333333",     // Dark grey for dates
+        background: "#1a237e",   // Dark blue
+        accent: "#4caf50"        // Green
+    }
+    
+    // CSS variables with static colors
+    useEffect(() => {
+        const root = document.documentElement;
+        root.style.setProperty('--primary-text-color', testColors.text);
+        root.style.setProperty('--day-text-color', testColors.textDark);
+        root.style.setProperty('--header-text-color', testColors.primary);
+        root.style.setProperty('--more-link-color', testColors.primary);
+        root.style.setProperty('--today-bg-color', `${testColors.primary}33`); // 33 adds transparency
+        root.style.setProperty('--button-bg-color', testColors.primary);
+        root.style.setProperty('--button-border-color', testColors.primary);
+        root.style.setProperty('--button-text-color', testColors.text);
+        root.style.setProperty('--button-hover-bg-color', testColors.secondary);
+        root.style.setProperty('--time-text-color', testColors.textDark);
+        root.style.setProperty('--list-day-bg-color', testColors.primary);
+        root.style.setProperty('--list-day-text-color', testColors.text);
+    }, []);
+
+
+    // const colors = theme.palette
     
     const handleDateClick = (selected) => {
         console.log("Selected:\n", selected)
@@ -68,7 +96,7 @@ const Calendar = () => {
             </div>
             <div className="w-full">
                 <FullCalendar
-                    height="75vh"
+                    height="75vh" 
                     plugins={[
                     dayGridPlugin,
                     timeGridPlugin,
@@ -100,9 +128,6 @@ const Calendar = () => {
                         date: "2024-09-28",
                     },
                     ]}
-                    // eventBackgroundColor={colors.primary[400]}
-                    // eventBorderColor={colors.primary[500]}
-                    // eventTextColor={"colors.primary[100]"}
                 />
             </div>
         </div>
