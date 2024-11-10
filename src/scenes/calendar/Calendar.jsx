@@ -9,7 +9,7 @@ import { useTheme } from "../../theme/ThemeContext";
 import { formatDate } from "@fullcalendar/core/index.js";
 
 const Calendar = () => {
-    const { theme } = useTheme()
+    const { theme, isDarkMode } = useTheme()
     const [currentEvents, setCurrentEvents] = useState([])
 
     // Static colors for testing
@@ -21,12 +21,14 @@ const Calendar = () => {
         background: "#1a237e",   // Dark blue
         accent: "#4caf50"        // Green
     }
+
+    const colors = theme.calendar
     
     // CSS variables with static colors
     useEffect(() => {
         const root = document.documentElement;
-        root.style.setProperty('--primary-text-color', testColors.text);
-        root.style.setProperty('--day-text-color', testColors.textDark);
+        root.style.setProperty('--primary-text-color', colors.primaryText);
+        root.style.setProperty('--day-text-color', colors.primaryText);
         root.style.setProperty('--header-text-color', testColors.primary);
         root.style.setProperty('--more-link-color', testColors.primary);
         root.style.setProperty('--today-bg-color', `${testColors.primary}33`); // 33 adds transparency
@@ -37,10 +39,8 @@ const Calendar = () => {
         root.style.setProperty('--time-text-color', testColors.textDark);
         root.style.setProperty('--list-day-bg-color', testColors.primary);
         root.style.setProperty('--list-day-text-color', testColors.text);
-    }, []);
+    }, [isDarkMode]);
 
-
-    // const colors = theme.palette
     
     const handleDateClick = (selected) => {
         console.log("Selected:\n", selected)
