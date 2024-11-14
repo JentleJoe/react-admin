@@ -14,8 +14,8 @@ const Calendar = () => {
 
     // Static colors for testing
     const testColors = {
-        primary: "#2196f3",      // Blue
-        secondary: "#f50057",    // Pink
+        primary: "#4cc2ac",      // Blue
+        secondary: "teal",    // Pink
         text: "#ffffff",         // White
         textDark: "#333333",     // Dark grey for dates
         background: "#1a237e",   // Dark blue
@@ -23,13 +23,14 @@ const Calendar = () => {
     }
 
     const colors = theme.calendar
+    const eventTheme = theme.calendarSidebar
     
     // CSS variables with static colors
     useEffect(() => {
         const root = document.documentElement;
         root.style.setProperty('--primary-text-color', colors.primaryText);
         root.style.setProperty('--day-text-color', colors.primaryText);
-        root.style.setProperty('--header-text-color', testColors.primary);
+        root.style.setProperty('--header-text-color', colors.primaryText);
         root.style.setProperty('--more-link-color', testColors.primary);
         root.style.setProperty('--today-bg-color', `${testColors.primary}33`); // 33 adds transparency
         root.style.setProperty('--button-bg-color', testColors.primary);
@@ -74,12 +75,13 @@ const Calendar = () => {
         <Header title='CALENDAR' subtitle='Full Calendar Interactive Page' />
         <div className="flex justify-between">
             <div className="min-w-[80px] md:mr-5 mr-3 max-[500px]:p-1 lg:p-4 p-2 rounded-[4px]
-            flex flex-col items-center max-w-[15vw]" style={theme.calendarSidebar}>
+            flex flex-col items-center max-w-[15vw]" style={eventTheme.boxTheme}>
                 {/* CALENDAR SIDEBAR */}
                 <h3 className="font-medium max-sm:text-sm mb-4">Events</h3>
                 {
                     currentEvents.map((event) => (
-                        <div key={event.id} className="max-[500px]:text-[8px] max-sm:text-xs sm:text-sm md:text-base flex flex-wrap items-center mb-2  rounded-sm bg-[#4cceac] p-2">
+                        <div key={event.id} className={`max-[500px]:text-[8px] max-sm:text-xs sm:text-sm md:text-base
+                        flex flex-wrap items-center mb-2  rounded-sm ${isDarkMode ? 'bg-[teal]' : 'bg-[#4cceac]'} p-2`}>
                             <h4>{event.title}</h4>
                             <p>
                             {

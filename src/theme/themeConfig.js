@@ -56,10 +56,6 @@ export const lightTheme = {
         backgroundColor: '#1F2937',
       },
     },
-  calendarSidebar: {
-      backgroundColor: '#f2f0f0',
-      border: 'none',
-  },
   form: {
       colors: {
           inputText: '',
@@ -99,6 +95,14 @@ export const lightTheme = {
     dataGrid: {
       text: 'black'
     },
+
+    calendarSidebar: {
+      boxTheme: {
+        background: '#f2f0f0',
+        border: 'none',
+        color: '', //default
+      },
+  },
 
     // Full Calendar Styles
     calendar: {
@@ -173,10 +177,6 @@ export const darkTheme = {
         backgroundColor: '#1F2937',
       },
     },
-  calendarSidebar: {
-      backgroundColor: '#1e293b',
-      color: '#e5e7eb',
-  },
   form: {
       colors: {
           inputText: 'white',
@@ -217,6 +217,14 @@ export const darkTheme = {
     dataGrid: {
       text: '#E1D9D1'
     },
+  
+    calendarSidebar: {
+      boxTheme: {
+        background: '#1e293b',
+        color: 'white',
+        border: 'none',
+      },
+  },
 
     // Full Calendar Styles
     calendar: {
