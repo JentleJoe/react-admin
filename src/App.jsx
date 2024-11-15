@@ -8,7 +8,7 @@ import { useState } from "react"
 
 
 function App() {
-  const { theme, isDarkMode, toggleTheme } = useTheme()
+  const { theme } = useTheme()
   const [alert, setAlert] = useState({showAlert: false, color: '', text: ''})
   
   
@@ -45,7 +45,7 @@ function App() {
       <aside className={` ${theme.sidebar}`} >
         <Sidebar />
       </aside>
-      <main className={`main relative content ${theme.background} p-5`} >
+      <main className={`main overflow-y-auto overflow-x-hidden relative content ${theme.background} p-5`} >
       {alert.showAlert && <Alert text={alert.text} color={alert.color} />}
         <Topbar />
         <Routes>

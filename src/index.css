@@ -24,7 +24,7 @@ body,
 }
 
 .main{
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .app{
@@ -177,6 +177,14 @@ body,
 .fc .fc-list-day-cushion {
   background-color: var(--list-day-bg-color) !important;
   color: var(--list-day-text-color) !important;
+}
+
+/* .fc .fc-list-event{
+  background-color: black !important;
+} */
+
+.fc .fc-list-event-title, .fc .fc-list-event-time{
+  color: var(--primary-text-color);
 }
 
 /* Additional styles for better aesthetics */

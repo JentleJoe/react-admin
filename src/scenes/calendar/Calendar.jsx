@@ -37,7 +37,7 @@ const Calendar = () => {
         root.style.setProperty('--button-border-color', testColors.primary);
         root.style.setProperty('--button-text-color', testColors.text);
         root.style.setProperty('--button-hover-bg-color', testColors.secondary);
-        root.style.setProperty('--time-text-color', testColors.textDark);
+        root.style.setProperty('--time-text-color', colors.primaryText);
         root.style.setProperty('--list-day-bg-color', testColors.primary);
         root.style.setProperty('--list-day-text-color', testColors.text);
     }, [isDarkMode]);
