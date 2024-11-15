@@ -7,14 +7,24 @@
 html,
 body,
 #root,
-.app,
 .content{
   height: 100%;
   width: 100%;
   font-family: "Source Sans 3", serif;
 }
+
+.app{
+  height: 100vh;
+  overflow: hidden;
+}
+
 .sidebar{
-  height: 100%;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.main{
+  overflow-y: scroll;
 }
 
 .app{

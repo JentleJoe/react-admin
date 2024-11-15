@@ -45,7 +45,7 @@ function App() {
       <aside className={` ${theme.sidebar}`} >
         <Sidebar />
       </aside>
-      <main className={`relative content ${theme.background} p-5`} >
+      <main className={`main relative content ${theme.background} p-5`} >
       {alert.showAlert && <Alert text={alert.text} color={alert.color} />}
         <Topbar />
         <Routes>
