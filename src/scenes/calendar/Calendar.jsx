@@ -80,7 +80,7 @@ const Calendar = () => {
                 <h3 className="font-medium max-sm:text-sm mb-4">Events</h3>
                 {
                     currentEvents.map((event) => (
-                        <div key={event.id} className={`max-[500px]:text-[8px] max-sm:text-xs sm:text-sm md:text-base
+                        <div key={event.id} className={`max-[500px]:text-[8px] max-sm:text-xs sm:text-sm md:text-base w-full
                         flex flex-wrap items-center mb-2  rounded-sm ${isDarkMode ? 'bg-[teal]' : 'bg-[#4cceac]'} p-2`}>
                             <h4>{event.title}</h4>
                             <p>
@@ -122,12 +122,12 @@ const Calendar = () => {
                     {
                         id: "12315",
                         title: "All-day event",
-                        date: "2024-09-14",
+                        date: "2024-11-14",
                     },
                     {
                         id: "5123",
-                        title: "Timed event",
-                        date: "2024-09-28",
+                        title: "Vwakpor's Birthday",
+                        date: "2024-11-25",
                     },
                     ]}
                 />

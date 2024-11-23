@@ -10,6 +10,7 @@ import { useState } from "react"
 function App() {
   const { theme } = useTheme()
   const [alert, setAlert] = useState({showAlert: false, color: '', text: ''})
+  const [showSidebar, setShowSidebar] = useState(false) //handles mobile sidebar
   
   
   const handleAlert = (text, color) => {
@@ -39,15 +40,28 @@ function App() {
     }
   }
 
+  const toggleShowSidebar = () => {
+    setShowSidebar((prev) => !prev)
+  }
+
   return (
   <>
     <div className={`app`}>
-      <aside className={` ${theme.sidebar}`} >
+      <aside className={`max-md:hidden ${theme.sidebar}`} >
         <Sidebar />
       </aside>
+      {
+        showSidebar ?
+        <aside className={`absolute left-0 z-[50] md:hidden ${theme.sidebar}
+        transition-transform duration-500 ease-in-out ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`} >
+          <Sidebar />
+        </aside>
+        :
+        null
+      }
       <main className={`main overflow-y-auto overflow-x-hidden relative content ${theme.background} p-5`} >
       {alert.showAlert && <Alert text={alert.text} color={alert.color} />}
-        <Topbar />
+        <Topbar showSidebar={showSidebar} toggleShowSidebar={toggleShowSidebar} />
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/team" element={<Team />} />

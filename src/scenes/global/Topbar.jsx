@@ -1,18 +1,21 @@
 import { LightModeOutlined, DarkModeOutlined, NotificationsOutlined, SettingsOutlined, PersonOutline, SearchSharp } from "@mui/icons-material"
 import { useTheme } from "../../theme/ThemeContext"
+import { MenuOutlined } from "@mui/icons-material"
 
-const Topbar = () => {
+const Topbar = ({ showSidebar, toggleShowSidebar }) => {
   const { theme, isDarkMode, toggleTheme } = useTheme()
 
   return (
     <div className={`flex justify-between items-center w-full h-min `}>
       <div className={`topleft `}>
-        <div className={`search-bx flex items-center justify-center p-2 ${ theme.searchboxBg } flex justify-between item-center w-[200px] rounded-sm`}>
-            <input type="text" className={` text-sm  ${ theme.text } border-none bg-transparent outline-none `} placeholder="Search" />
+        <div className={`search-bx flex items-center justify-center p-2
+          ${ theme.searchboxBg } flex justify-between item-center w-[200px] rounded-sm`}>
+          <input type="text" className={` text-sm  ${ theme.text }
+          border-none bg-transparent outline-none `} placeholder="Search" />
           <SearchSharp className={` ${ theme.text }  `} />
         </div>
       </div>
-      <div className={`topright`}>
+      <div className={`max-md:hidden topright`}>
         {
           isDarkMode ?
           <div className={`grid grid-flow-col sm:gap-3 gap-2`}>
@@ -45,6 +48,9 @@ const Topbar = () => {
             </div>
           </div>
         }
+      </div>
+      <div className="md:hidden" onClick={toggleShowSidebar}>
+        <MenuOutlined className={`cursor-pointer`} />
       </div>
     </div>
   )
