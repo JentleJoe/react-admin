@@ -52,6 +52,10 @@ body,
   background: #555;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
  /* ALERT STYLES */
 .dialogbx-container{
   position: absolute;

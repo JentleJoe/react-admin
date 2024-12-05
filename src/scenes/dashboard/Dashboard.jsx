@@ -38,49 +38,49 @@ const Dashboard = () => {
   const transactions = [
     {
       id: '01e4dsa',
-      name: 'jentlejoe',
+      name: 'JentleJoe',
       date: '2024-12-01',
       amount: '$450.95',
     },
     {
       id: '01e4dsb',
-      name: 'epignosis',
+      name: 'Epignosis',
       date: '2024-12-01',
       amount: '$305.05',
     },
     {
       id: '01e4dsc',
-      name: 'fabian',
+      name: 'Fabian',
       date: '2024-12-02',
       amount: '$400.65',
     },
     {
       id: '01e4dsd',
-      name: 'fortune',
+      name: 'Fortune',
       date: '2024-12-02',
       amount: '$750.60',
     },
     {
       id: '01e4dse',
-      name: 'ulam',
+      name: 'Ulam',
       date: '2024-12-03',
       amount: '$250.05',
     },
     {
       id: '01e4dsf',
-      name: 'eguono',
+      name: 'Eguono',
       date: '2024-12-03',
       amount: '$520.30',
     },
     {
       id: '01e4dsg',
-      name: 'david',
+      name: 'David',
       date: '2024-12-04',
       amount: '$603.54',
     },
     {
       id: '01e4dsh',
-      name: 'precious',
+      name: 'Precious',
       date: '2024-12-05',
       amount: '$340.23',
     },
@@ -96,7 +96,7 @@ const Dashboard = () => {
         </button>
       </div>
       <div className="grid sm:grid-cols-6 lg:grid-cols-12 gap-5 auto-rows-fr  ">
-        <div className={`sm:col-span-3 min-h-[140px] ${theme.background2}`}></div>
+        <div className={`sm:col-span-3 min-h-[130px] ${theme.background2}`}></div>
         <div className={`sm:col-span-3 ${theme.background2}`}></div>
         <div className={`sm:col-span-3 ${theme.background2}`}></div>
         <div className={`sm:col-span-3 ${theme.background2}`}></div>
@@ -111,16 +111,32 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className={`p-6 sm:col-span-3 lg:col-span-4 row-span-2  ${theme.background2} `}>
-          <p className={`font-semibold ${theme.text}`}>Recent Transactions</p>
+        <div className={`sm:col-span-3 lg:col-span-4 row-span-2 flex flex-col max-h-[280px] gap-1`}>
+          <p className={`font-semibold ${theme.text} p-4 ${theme.background2} `}>Recent Transactions</p>
+          <div className={`flex flex-col max-h-[280px] gap-1 overflow-y-scroll no-scrollbar`}>
+            {
+              transactions.map((item) => (
+                <div key={item.id} className={`p-4 ${theme.background2} flex justify-between gap-2 items-center text-sm`}>
+                  <div className={``} >
+                    <p className="text-[#4cc2ac] font-semibold">{item.id}</p>
+                    <p className={`${theme.text}`}>{item.name}</p>
+                  </div>
+                  <div className={`${theme.text}`} >{item.date}</div>
+                  <div className={`p-2 ${theme.text} bg-[#4cc2ac] rounded-sm flex items-center justify-center`} >
+                    {item.amount}
+                  </div>
+                </div>
+              ))
+            }
+          </div>
         </div>
-        <div className={`p-6 sm:col-span-3 lg:col-span-4 row-span-2  ${theme.background2} `}>
+        <div className={`p-4 sm:col-span-3 lg:col-span-4 row-span-2 ${theme.background2} `}>
           <p className={`font-semibold ${theme.text}`}>Campaign</p>
         </div>
-        <div className={`p-6 sm:col-span-3 lg:col-span-4 row-span-2  ${theme.background2} `}>
+        <div className={`p-4 sm:col-span-3 lg:col-span-4 row-span-2 ${theme.background2} `}>
           <p className={`font-semibold ${theme.text}`}>Sales Quantity</p>
         </div>
-        <div className={`p-6 sm:col-span-3 lg:col-span-4 row-span-2  ${theme.background2} `}>
+        <div className={`p-4 sm:col-span-3 lg:col-span-4 row-span-2 ${theme.background2} `}>
           <p className={`font-semibold ${theme.text}`}>Geography Based Traffic</p>
         </div>
       </div>
