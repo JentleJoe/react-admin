@@ -8,6 +8,84 @@ const Dashboard = () => {
 
   const colors = theme.palette
 
+  const stats = [
+    {
+      icon: '',
+      title: 'Emails Sent',
+      percent: '+15%',
+      value: '13,450',
+    },
+    {
+      icon: '',
+      title: 'Sales Obtained',
+      percent: '+25%',
+      value: '400,225',
+    },
+    {
+      icon: '',
+      title: 'New Clients',
+      percent: '+5%',
+      value: '36,442',
+    },
+    {
+      icon: '',
+      title: 'Traffic Received',
+      percent: '+43%',
+      value: '1,205,325',
+    },
+  ]
+
+  const transactions = [
+    {
+      id: '01e4dsa',
+      name: 'jentlejoe',
+      date: '2024-12-01',
+      amount: '$450.95',
+    },
+    {
+      id: '01e4dsb',
+      name: 'epignosis',
+      date: '2024-12-01',
+      amount: '$305.05',
+    },
+    {
+      id: '01e4dsc',
+      name: 'fabian',
+      date: '2024-12-02',
+      amount: '$400.65',
+    },
+    {
+      id: '01e4dsd',
+      name: 'fortune',
+      date: '2024-12-02',
+      amount: '$750.60',
+    },
+    {
+      id: '01e4dse',
+      name: 'ulam',
+      date: '2024-12-03',
+      amount: '$250.05',
+    },
+    {
+      id: '01e4dsf',
+      name: 'eguono',
+      date: '2024-12-03',
+      amount: '$520.30',
+    },
+    {
+      id: '01e4dsg',
+      name: 'david',
+      date: '2024-12-04',
+      amount: '$603.54',
+    },
+    {
+      id: '01e4dsh',
+      name: 'precious',
+      date: '2024-12-05',
+      amount: '$340.23',
+    },
+  ]
+
   return (
     <div className="text-white">
       <div className={`flex items-center justify-between`}>
