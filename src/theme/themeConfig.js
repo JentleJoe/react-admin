@@ -3,6 +3,7 @@ import { tokens } from "../theme"
 export const lightTheme = {
   primaryText: '#000',
   background: 'bg-[#fcfcfc]',
+  background2: 'bg-[#f2f0f0]',
   searchboxBg: 'bg-[rgba(0,0,0,0.1)]',
   text: 'text-gray-800',
   alertText: 'text-gray-800',
@@ -124,6 +125,7 @@ export const lightTheme = {
 export const darkTheme = {
   primaryText: '#fff',
   background: 'bg-slate-900',
+  background2: 'bg-[#1e293b]',
   searchboxBg: 'bg-slate-700',
   text: 'text-gray-200',
   alertText: 'white',
