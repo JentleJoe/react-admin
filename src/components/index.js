@@ -4,6 +4,7 @@ import PieChart from "./PieChart";
 import BarChart from "./BarChart";
 import LineChart from "./LineChart";
 import GeographyChart from "./GeographyChart";
+import ProgressCircle from "./ProgressCircle";
 
 export {
     Header,
@@ -12,4 +13,5 @@ export {
     BarChart,
     LineChart,
     GeographyChart,
+    ProgressCircle,
 }

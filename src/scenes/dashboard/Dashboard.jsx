@@ -1,4 +1,4 @@
-import { Header } from "../../components"
+import { Header, ProgressCircle } from "../../components"
 import { useTheme } from "../../theme/ThemeContext"
 import { DownloadOutlined, Percent } from "@mui/icons-material"
 
@@ -90,9 +90,9 @@ const Dashboard = () => {
     <div className="text-white">
       <div className={`flex items-center justify-between`}>
         <Header title="DASHBOARD" subtitle='Welcome to Your Dashboard' />
-        <button className={`flex items-center gap-[10px] border rounded-sm text-sm font-bold px-5 py-[10px] ${theme.text} `}>
+        <button style={{background : colors.blueAccent[700]}} className={`flex items-center gap-[10px] rounded-[4px] text-sm font-bold pr-5 pl-4 py-[10px] ${theme.text} `}>
           <DownloadOutlined />
-          Dowload Reports
+          DOWNLOAD REPORTS
         </button>
       </div>
       <div className="grid sm:grid-cols-6 lg:grid-cols-12 gap-5 auto-rows-fr  ">
@@ -122,7 +122,7 @@ const Dashboard = () => {
                     <p className={`${theme.text}`}>{item.name}</p>
                   </div>
                   <div className={`${theme.text}`} >{item.date}</div>
-                  <div className={`p-2 ${theme.text} bg-[#4cc2ac] rounded-sm flex items-center justify-center`} >
+                  <div className={`p-2 font-medium text-black bg-[#4cc2ac] rounded-sm flex items-center justify-center`} >
                     {item.amount}
                   </div>
                 </div>
@@ -132,6 +132,11 @@ const Dashboard = () => {
         </div>
         <div className={`p-4 sm:col-span-3 lg:col-span-4 row-span-2 ${theme.background2} `}>
           <p className={`font-semibold ${theme.text}`}>Campaign</p>
+          <div className="flex flex-col justify-center items-center mt-6">
+            <ProgressCircle progress={75} size={130} strokeWidth={13} />
+            <p className="mt-2 text-[#4cc2ac] font-medium">$62,520 revenue generated</p>
+            <p className={`${theme.text} text-xs`}>includes extra misc expenditures and costs</p>
+          </div>
         </div>
         <div className={`p-4 sm:col-span-3 lg:col-span-4 row-span-2 ${theme.background2} `}>
           <p className={`font-semibold ${theme.text}`}>Sales Quantity</p>
