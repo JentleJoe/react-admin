@@ -1,4 +1,4 @@
-import { Header, ProgressCircle } from "../../components"
+import { Header, ProgressCircle, LineChart, BarChart } from "../../components"
 import { useTheme } from "../../theme/ThemeContext"
 import { DownloadOutlined, Percent } from "@mui/icons-material"
 
@@ -90,9 +90,9 @@ const Dashboard = () => {
     <div className="text-white">
       <div className={`flex items-center justify-between`}>
         <Header title="DASHBOARD" subtitle='Welcome to Your Dashboard' />
-        <button style={{background : colors.blueAccent[700]}} className={`flex items-center gap-[10px] rounded-[4px] text-sm font-bold pr-5 pl-4 py-[10px] ${theme.text} `}>
+        <button style={{background : colors.blueAccent[700]}} className={`flex items-center gap-[10px] rounded-[4px] sm:text-sm text-xs font-bold pr-5 pl-4 py-[10px] ${theme.text} `}>
           <DownloadOutlined />
-          DOWNLOAD REPORTS
+          <div className="max-[480px]:hidden">DOWNLOAD REPORTS</div>
         </button>
       </div>
       <div className="grid sm:grid-cols-6 lg:grid-cols-12 gap-5 auto-rows-fr  ">
@@ -110,10 +110,13 @@ const Dashboard = () => {
               <DownloadOutlined />
             </div>
           </div>
+          {/* <div className=" h-[250px] m-[-20px] ">
+            <LineChart isDashboard={true} />
+          </div> */}
         </div>
-        <div className={`sm:col-span-3 lg:col-span-4 row-span-2 flex flex-col max-h-[280px] gap-1`}>
+        <div className={`sm:col-span-3 lg:col-span-4 row-span-2 flex flex-col max-h-[310px] gap-1`}>
           <p className={`font-semibold ${theme.text} p-4 ${theme.background2} `}>Recent Transactions</p>
-          <div className={`flex flex-col max-h-[280px] gap-1 overflow-y-scroll no-scrollbar`}>
+          <div className={`flex flex-col gap-1 overflow-y-scroll no-scrollbar`}>
             {
               transactions.map((item) => (
                 <div key={item.id} className={`p-4 ${theme.background2} flex justify-between gap-2 items-center text-sm`}>
@@ -140,6 +143,9 @@ const Dashboard = () => {
         </div>
         <div className={`p-4 sm:col-span-3 lg:col-span-4 row-span-2 ${theme.background2} `}>
           <p className={`font-semibold ${theme.text}`}>Sales Quantity</p>
+          <div className=" w-auto h-[250px] mx-[-30px]">
+            <BarChart isDashboard={true} />
+          </div>
         </div>
         <div className={`p-4 sm:col-span-3 lg:col-span-4 row-span-2 ${theme.background2} `}>
           <p className={`font-semibold ${theme.text}`}>Geography Based Traffic</p>
