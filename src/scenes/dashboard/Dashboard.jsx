@@ -1,6 +1,7 @@
-import { Header, ProgressCircle, LineChart, BarChart } from "../../components"
+import { Header, ProgressCircle, LineChart, BarChart, GeographyChart, StatBox } from "../../components"
 import { useTheme } from "../../theme/ThemeContext"
 import { DownloadOutlined, Percent } from "@mui/icons-material"
+import { Email, PointOfSale, PersonAdd, Traffic } from "@mui/icons-material"
 
 const Dashboard = () => {
   
@@ -10,28 +11,32 @@ const Dashboard = () => {
 
   const stats = [
     {
-      icon: '',
+      icon: <Email sx={{ color: colors.greenAccent[600], fontSize: "26px" }} />,
       title: 'Emails Sent',
-      percent: '+15%',
+      increase: '+15%',
       value: '13,450',
+      progress: '75',
     },
     {
-      icon: '',
+      icon: <PointOfSale sx={{ color: colors.greenAccent[600], fontSize: "26px" }} />,
       title: 'Sales Obtained',
-      percent: '+25%',
+      increase: '+25%',
       value: '400,225',
+      progress: '50',
     },
     {
-      icon: '',
+      icon: <PersonAdd sx={{ color: colors.greenAccent[600], fontSize: "26px" }} />,
       title: 'New Clients',
-      percent: '+5%',
+      increase: '+5%',
       value: '36,442',
+      progress: '30',
     },
     {
-      icon: '',
+      icon: <Traffic sx={{ color: colors.greenAccent[600], fontSize: "26px" }} />,
       title: 'Traffic Received',
-      percent: '+43%',
+      increase: '+43%',
       value: '1,205,325',
+      progress: '80',
     },
   ]
 
@@ -96,10 +101,13 @@ const Dashboard = () => {
         </button>
       </div>
       <div className="grid sm:grid-cols-6 lg:grid-cols-12 gap-5 auto-rows-fr  ">
-        <div className={`sm:col-span-3 min-h-[130px] ${theme.background2}`}></div>
-        <div className={`sm:col-span-3 ${theme.background2}`}></div>
-        <div className={`sm:col-span-3 ${theme.background2}`}></div>
-        <div className={`sm:col-span-3 ${theme.background2}`}></div>
+        {
+          stats.map((stat, index) => (
+            <div key={index} className={`sm:col-span-3 ${theme.background2} p-5`}>
+              <StatBox title={stat.title} value={stat.value} icon={stat.icon} progress={stat.progress} increase={stat.increase} />
+            </div>
+          ))
+        }
         <div className={`sm:col-span-6 lg:col-span-8 row-span-2 p-6 ${theme.background2}`}>
           <div className="flex justify justify-between items-center" >
             <div>
@@ -110,9 +118,9 @@ const Dashboard = () => {
               <DownloadOutlined />
             </div>
           </div>
-          {/* <div className=" h-[250px] m-[-20px] ">
+          <div className="h-[250px] m-[-30px] ">
             <LineChart isDashboard={true} />
-          </div> */}
+          </div>
         </div>
         <div className={`sm:col-span-3 lg:col-span-4 row-span-2 flex flex-col max-h-[310px] gap-1`}>
           <p className={`font-semibold ${theme.text} p-4 ${theme.background2} `}>Recent Transactions</p>
@@ -148,7 +156,10 @@ const Dashboard = () => {
           </div>
         </div>
         <div className={`p-4 sm:col-span-3 lg:col-span-4 row-span-2 ${theme.background2} `}>
-          <p className={`font-semibold ${theme.text}`}>Geography Based Traffic</p>
+          <p className={`font-semibold ${theme.text} mb-5`}>Geography Based Traffic</p>
+          <div className=" w-auto h-[200px] mx-[-20px]">
+            <GeographyChart isDashboard={true} />
+          </div>
         </div>
       </div>
     </div>
