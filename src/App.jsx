@@ -50,11 +50,12 @@ function App() {
       <aside className={`max-md:hidden ${theme.sidebar}`} >
         <Sidebar />
       </aside>
+      {/* Mobile Sidebar */}
       {
         showSidebar ?
         <aside className={`absolute left-0 z-[50] md:hidden ${theme.sidebar}
         transition-transform duration-500 ease-in-out ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`} >
-          <Sidebar />
+          <Sidebar ismobile={true} toggleShowSidebar={toggleShowSidebar}  />
         </aside>
         :
         null

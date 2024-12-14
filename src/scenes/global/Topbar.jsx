@@ -1,6 +1,8 @@
 import { LightModeOutlined, DarkModeOutlined, NotificationsOutlined, SettingsOutlined, PersonOutline, SearchSharp } from "@mui/icons-material"
 import { useTheme } from "../../theme/ThemeContext"
 import { MenuOutlined } from "@mui/icons-material"
+import menu from '../../assets/hamburger.svg'
+import whiteMenu from '../../assets/white-hamburger.svg'
 
 const Topbar = ({ showSidebar, toggleShowSidebar }) => {
   const { theme, isDarkMode, toggleTheme } = useTheme()
@@ -9,7 +11,8 @@ const Topbar = ({ showSidebar, toggleShowSidebar }) => {
     <div className={`flex justify-between md:items-center w-full h-min `}>
       <div className="flex items-start">
         <div className="md:hidden mr-4" onClick={toggleShowSidebar}>
-          <MenuOutlined className={`cursor-pointer`} />
+          {/* <MenuOutlined className={`cursor-pointer`} /> */}
+          <img src={ isDarkMode ? whiteMenu : menu } width={35} className="" />
         </div>
         <div className={`topleft `}>
           <div className={`search-bx flex items-center justify-center p-2

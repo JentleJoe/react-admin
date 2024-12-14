@@ -7,6 +7,8 @@ import { HomeOutlined, PeopleOutline, ContactsOutlined, ReceiptOutlined, PersonO
   CalendarTodayOutlined, HelpOutlineOutlined, BarChartOutlined, PieChartOutlineOutlined,
   TimelineOutlined, MenuOutlined, MapOutlined
  } from '@mui/icons-material';
+ import leftArrow from '../../assets/arrowleft.svg'
+ import whiteArrow from '../../assets/white-arrowleft.svg'
 
  const Item = ({title, to, icon, selected, setSelected}) => {
   const { theme } = useTheme()
@@ -18,11 +20,11 @@ import { HomeOutlined, PeopleOutline, ContactsOutlined, ReceiptOutlined, PersonO
  }
 
 
-const Sidebar = () => {
+const Sidebar = ({ ismobile = false, toggleShowSidebar }) => {
   const [isCollaspsed, setIsCollapsed] = useState(false)
   const [selected, setSelected] = useState('Dashboard')
 
-  const { theme } = useTheme()
+  const { theme, isDarkMode } = useTheme()
 
   const toggleCollapsed = () => {
     setIsCollapsed(prev => !prev)
@@ -36,7 +38,12 @@ const Sidebar = () => {
       >
         <div className={` px-5 mt-5 flex items-center ${!isCollaspsed ? 'justify-between' : 'justify-center'} `} >
           {!isCollaspsed && <h3 className={`${theme.text} text-2xl font-semibold `} >ADMIN</h3>}
-          <MenuOutlined className={`cursor-pointer`} onClick={toggleCollapsed} />
+          {
+            ismobile ?
+            <img src={ isDarkMode ? whiteArrow : leftArrow } width={20} onClick={toggleShowSidebar} />
+            :
+            <MenuOutlined className={`cursor-pointer`} onClick={toggleCollapsed} />
+          }
         </div>
 
         {
