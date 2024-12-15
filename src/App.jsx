@@ -53,8 +53,8 @@ function App() {
       {/* Mobile Sidebar */}
       {
         showSidebar ?
-        <aside className={`absolute left-0 z-[50] md:hidden ${theme.sidebar}
-        transition-transform duration-500 ease-in-out ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`} >
+        <aside className={`absolute w-full left-0 z-[50] md:hidden ${theme.sidebar}
+        transition-transform duration-500 ease-in-out ${showSidebar ? 'translate-x-0' : 'translate-x-full'}`} >
           <Sidebar ismobile={true} toggleShowSidebar={toggleShowSidebar}  />
         </aside>
         :

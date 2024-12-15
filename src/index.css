@@ -114,6 +114,14 @@ body,
   border: none !important;
 }
 
+.ps-menu-button{
+  height: 48px !important;
+}
+ @media(max-width: 768px){
+  .ps-menu-button{
+    height: 42px !important;
+  }
+ }
 
 
 

@@ -95,7 +95,7 @@ const Dashboard = () => {
     <div className="text-white">
       <div className={`flex items-center justify-between`}>
         <Header title="DASHBOARD" subtitle='Welcome to Your Dashboard' />
-        <button style={{background : colors.blueAccent[700]}} className={`flex items-center gap-[10px] rounded-[4px] sm:text-sm text-xs font-bold pr-5 pl-4 py-[10px] ${theme.text} `}>
+        <button style={{background : colors.blueAccent[700]}} className={`flex items-center gap-[10px] rounded-[4px] sm:text-sm text-xs font-bold pr-4 sm:pr-5 pl-4 py-[10px] ${theme.text} `}>
           <DownloadOutlined />
           <div className="max-[480px]:hidden">DOWNLOAD REPORTS</div>
         </button>

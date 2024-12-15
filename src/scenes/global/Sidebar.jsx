@@ -48,7 +48,7 @@ const Sidebar = ({ ismobile = false, toggleShowSidebar }) => {
 
         {
           !isCollaspsed &&
-          <div className={` mt-8`}>
+          <div className={`md:mt-8 mt-4`}>
             <div className={`flex items-center justify-center`}>
               <img src={userlogo} width={100} height={100} alt='userlogo' className={`rounded-full cursor-pointer`} />
             </div>
@@ -58,7 +58,7 @@ const Sidebar = ({ ismobile = false, toggleShowSidebar }) => {
             </div>
           </div>
         }
-        <div className={`mt-6`}>
+        <div className={`md:mt-6 mt-3`}>
           <Menu
             menuItemStyles={theme.sidebarItem}
           >

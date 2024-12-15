@@ -16,7 +16,7 @@ const Topbar = ({ showSidebar, toggleShowSidebar }) => {
         </div>
         <div className={`topleft `}>
           <div className={`search-bx flex items-center justify-center p-2
-            ${ theme.searchboxBg } flex item-center md:rounded-sm
+            ${ theme.searchboxBg } flex item-center md:rounded-[4px]
             rounded-md`}>
             <input type="text" className={`md:w-[150px] w-[100px] text-sm ${ theme.text }
             border-none bg-transparent outline-none `} placeholder="Search" />
