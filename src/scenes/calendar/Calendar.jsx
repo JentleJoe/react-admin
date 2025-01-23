@@ -11,28 +11,46 @@ import { formatDate } from "@fullcalendar/core/index.js";
 const Calendar = () => {
     const { theme, isDarkMode } = useTheme()
     const [currentEvents, setCurrentEvents] = useState([])
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
-
+    const [viewport, setViewport] = useState('desktop');
+    
     useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth < 1024);
+        const checkViewportSize = () => {
+            const width = window.innerWidth;
+            if (width < 640) setViewport('mobile');
+            else if (width < 1024) setViewport('tablet');
+            else setViewport('desktop');
         };
-        
-        window.addEventListener('resize', checkMobile);
-        return () => window.removeEventListener('resize', checkMobile);
+    
+        // Initial check
+        checkViewportSize();
+    
+        // Add resize listener
+        window.addEventListener('resize', checkViewportSize);
+        return () => window.removeEventListener('resize', checkViewportSize);
     }, []);
     
-    const headerToolbar = isMobile 
-        ? {
-            left: "prev,next",
-            center: "title",
-            right: "dayGridMonth,listMonth"
+    const getHeaderToolbar = () => {
+        switch(viewport) {
+            case 'mobile':
+                return {
+                    left: "prev",
+                    center: "title",
+                    right: "next"
+                };
+            case 'tablet':
+                return {
+                    left: "prev,next",
+                    center: "title",
+                    right: "dayGridMonth,listMonth"
+                };
+            default:
+                return {
+                    left: "prev,next today",
+                    center: "title",
+                    right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth"
+                };
         }
-        : {
-            left: "prev,next today",
-            center: "title", 
-            right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth"
-        };
+    };
 
     // Static colors for testing
     const testColors = {
@@ -127,7 +145,7 @@ const Calendar = () => {
                     interactionPlugin,
                     listPlugin,
                     ]}
-                    headerToolbar={headerToolbar}
+                    headerToolbar={getHeaderToolbar()}
                     initialView="dayGridMonth"
                     editable={true}
                     selectable={true}

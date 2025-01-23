@@ -233,3 +233,13 @@ body,
     font-size: 1rem;
   }
 }
+
+@media(max-width : 620px){
+  .fc .fc-col-header-cell-cushion {
+    font-size: 0.7rem;
+  }
+  .fc .fc-daygrid-day-number {
+    padding: 8px !important;
+    font-size: 0.7em;
+  }
+}
