@@ -52,7 +52,7 @@ export const lightTheme = {
               },
           },
         },
-        fontSize: '0.8rem',
+        fontSize: '0.9rem',
         paddingTop: '0',
         paddingBottom: '0',
 
@@ -178,7 +178,7 @@ export const darkTheme = {
               },
           },
         },
-        fontSize: '0.8rem',
+        fontSize: '0.9rem',
         paddingTop: '0',
         paddingBottom: '0',
       }),
