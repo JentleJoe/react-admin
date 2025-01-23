@@ -1,3 +1,4 @@
+import { padding } from "@mui/system"
 import { tokens } from "../theme"
 
 export const lightTheme = {
@@ -51,9 +52,10 @@ export const lightTheme = {
               },
           },
         },
-        // fontSize: '0.8rem',
-        paddingTop: '0px',
-        paddingBottom: '0px',
+        fontSize: '0.8rem',
+        paddingTop: '0',
+        paddingBottom: '0',
+
       }),
       // Submenu styles if needed
       subMenuContent: {
@@ -176,6 +178,9 @@ export const darkTheme = {
               },
           },
         },
+        fontSize: '0.8rem',
+        paddingTop: '0',
+        paddingBottom: '0',
       }),
       // Submenu styles if needed
       subMenuContent: {
