@@ -132,6 +132,7 @@ body,
 .fc .fc-toolbar-title {
   color: var(--primary-text-color) !important;
   font-weight: bold !important;
+  font-size: 1.5rem;
 }
 
 /* Day numbers */
@@ -209,4 +210,22 @@ body,
 
 .fc-view-harness {
   background-color: transparent;
+}
+
+@media(max-width: 1440px){
+  .fc .fc-toolbar-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media(max-width: 1050px){
+  .fc .fc-toolbar-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media(max-width: 830px){
+  .fc .fc-toolbar-title {
+    font-size: 1rem;
+  }
 }

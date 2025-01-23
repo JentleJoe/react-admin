@@ -11,6 +11,28 @@ import { formatDate } from "@fullcalendar/core/index.js";
 const Calendar = () => {
     const { theme, isDarkMode } = useTheme()
     const [currentEvents, setCurrentEvents] = useState([])
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 1024);
+        };
+        
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+    
+    const headerToolbar = isMobile 
+        ? {
+            left: "prev,next",
+            center: "title",
+            right: "dayGridMonth,listMonth"
+        }
+        : {
+            left: "prev,next today",
+            center: "title", 
+            right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth"
+        };
 
     // Static colors for testing
     const testColors = {
@@ -74,8 +96,8 @@ const Calendar = () => {
     <div>
         <Header title='CALENDAR' subtitle='Full Calendar Interactive Page' />
         <div className="flex justify-between">
-            <div className="min-w-[80px] md:mr-5 mr-3 max-[500px]:p-1 lg:p-4 p-2 rounded-[4px]
-            flex flex-col items-center max-w-[15vw]" style={eventTheme.boxTheme}>
+            <div className="h-[100%] min-w-[80px] md:mr-5 mr-3 max-[500px]:p-1 lg:p-4 p-2 rounded-[4px]
+            flex flex-col items-center max-w-[15vw] " style={eventTheme.boxTheme}>
                 {/* CALENDAR SIDEBAR */}
                 <h3 className="font-medium max-sm:text-sm mb-4">Events</h3>
                 {
@@ -105,11 +127,7 @@ const Calendar = () => {
                     interactionPlugin,
                     listPlugin,
                     ]}
-                    headerToolbar={{
-                    left: "prev,next today",
-                    center: "title",
-                    right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
-                    }}
+                    headerToolbar={headerToolbar}
                     initialView="dayGridMonth"
                     editable={true}
                     selectable={true}
@@ -130,6 +148,7 @@ const Calendar = () => {
                         date: "2024-11-25",
                     },
                     ]}
+                    handleWindowResize={true}
                 />
             </div>
         </div>
