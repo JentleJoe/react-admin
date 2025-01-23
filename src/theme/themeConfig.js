@@ -7,7 +7,7 @@ export const lightTheme = {
   searchboxBg: 'bg-[rgba(0,0,0,0.1)]',
   text: 'text-gray-800',
   alertText: 'text-gray-800',
-  sidebarSubtitle: 'text-sm text-[#3D3D3D] mt-[15px] mb-[5px] px-5',
+  sidebarSubtitle: 'text-sm text-[#3D3D3D] mt-[5px] mb-[3px] px-5',
   primary: 'text-primary-600',
   secondary: 'text-secondary-600',
   hover: 'hover:bg-slate-300',
@@ -51,6 +51,9 @@ export const lightTheme = {
               },
           },
         },
+        // fontSize: '0.8rem',
+        paddingTop: '0px',
+        paddingBottom: '0px',
       }),
       // Submenu styles if needed
       subMenuContent: {
@@ -129,7 +132,7 @@ export const darkTheme = {
   searchboxBg: 'bg-slate-700',
   text: 'text-gray-200',
   alertText: 'white',
-  sidebarSubtitle: 'text-sm text-[#A3A3A3] mt-[15px] mb-[5px] px-5',
+  sidebarSubtitle: 'text-sm text-[#A3A3A3] mt-[5px] mb-[3px] px-5 px-5',
   primary: 'text-secondary-400',
   secondary: 'text-secondary-300',
   hover: 'hover:bg-slate-600',
