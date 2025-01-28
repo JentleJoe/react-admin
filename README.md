@@ -2,6 +2,10 @@
 
 A **modern, feature-rich React admin dashboard** designed to provide an **intuitive and efficient user experience** for managing organizational data.
 
+
+## 🚀 Preview
+![Admin Dashboard Preview](https://github.com/JentleJoe/my_portfolio/blob/master/src/assets/img/dashboard.png)
+
 ## 🚀 Key Features
 
 - **Dark Mode & Light Mode:**  
